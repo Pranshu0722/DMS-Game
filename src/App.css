@@ -1,0 +1,451 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Fira Code', monospace;
+  background: linear-gradient(to bottom, #7d9968, #303b2a);
+  padding-top: 70px;
+  transition: background-color 0.3s ease;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #304420;
+  color: white;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgb(225, 219, 219);
+  letter-spacing: 1px;
+}
+
+.back-button, .logout-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout-button {
+  background-color: #a85626;
+  transition: transform 0.3s ease;
+}
+
+.logout-button:hover, .back-button:hover {
+  background-color: #7d3f1f;
+  transform: translateY(-3px);
+}
+
+/* Container Styling */
+.container, .game-container, .common-form ,.feedback-container{
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 500px;
+  background-color: #f5f5db;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-top: 70px;
+}
+
+.profile-container{
+  margin: 40px auto;
+  padding: 30px;
+  width: 500px;
+  background-color: #f5f5db;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-top: 10px;
+  max-height: auto;
+
+}
+
+.question-container, .question-desc{
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 1000px;
+  background-color: #f5f5db;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-top: 50px;
+}
+.question-difficulty {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.ques-form {
+  margin-top: 110px;
+}
+
+.container:hover, .game-container:hover, .common-form:hover, .question-container:hover, .question-desc:hover,.about-ushover {
+  transform: scale(1.02);
+}
+
+/* Text Styling */
+h1, h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+}
+
+/* Button Styling */
+button, .game-box, .common-form button {
+  font-family: 'Fira Code', monospace;
+  background-color: #e08e11;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 150px;
+  margin: 10px;
+}
+
+button:hover, .game-box:hover, .common-form button:hover {
+  background-color: #a85626;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:focus, .game-box:focus, .common-form button:focus {
+  outline: none;
+}
+
+button:active, .game-box:active, .common-form button:active {
+  transform: translateY(1px);
+}
+
+/* Input Field Styling */
+input[type="text"], .common-form input, .common-form select, .common-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #c97532;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.common-form select, .common-form textarea {
+  background-color: #f5f5db;
+}
+
+.common-form input:focus, .common-form select:focus, .common-form textarea:focus {
+  border-color: #7d9968;
+  outline: none;
+}
+
+/* Instructions List Styling */
+.instructions-list {
+  list-style-type: none;
+  padding-left: 20px;
+  text-align: left;
+  color: black;
+}
+
+.instructions-list li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.instructions-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #c97532;
+}
+
+/* Game Grid Styling */
+.games-grid {
+  display: inline-flexbox;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.games-grid  {
+  background-color: #f5f5db;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container, .common-form {
+    padding: 20px;
+  }
+
+  h1, h2 {
+    font-size: 2rem;
+  }
+
+  button, .game-box, .common-form button {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .instructions-list {
+    font-size: 1rem;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .logout-button {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+}
+
+.question-container {
+  font-size: 16px;
+  text-align: justify;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+.options-container {
+  font-size: 20px;
+  text-align: justify;
+  margin: 20px;
+  line-height: 1.6;
+}
+
+.question-desc {
+  text-align: justify;
+}
+
+input, select, textarea {
+  background-color: #f5f5db;
+  font-family: 'Fira Code', monospace;
+}
+
+label {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+
+/* pppt  */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #7d9968c9;
+  padding: 30px;
+  border-radius: 8px;
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.option-label {
+  margin-left: 10px;
+}
+
+.ppt-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: -5px;
+}
+
+.ppt-iframe {
+  width: 800px;
+  height: 500px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* easy,medium color  */
+
+/* Add color styles based on difficulty */
+.question-difficulty.easy {
+  background-color: green;
+  color: white;
+}
+
+.question-difficulty.medium {
+  background-color: rgba(204, 204, 55, 0.799);
+  color: black;
+}
+
+.question-difficulty.hard {
+  background-color: red;
+  color: white;
+}
+
+.about-us{
+  margin: 40px auto;
+  padding: 30px;
+  max-width: 800px;
+  background-color: #f5f5db;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-top: 150px;
+}
+
+.feedback-container p{
+  font-size: 1.3rem;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  overflow-x: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: #f5f5db;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Fira Code', monospace;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #e08e11;
+  color: rgb(7, 7, 7);
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
+  font-size: 1.2rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5db;
+}
+
+tbody tr:hover {
+  background-color: #e0e0c2;
+  transition: background-color 0.3s;
+}
+
+th {
+  font-weight: bold;
+}
+
+td {
+  color: #333;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  th, td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
